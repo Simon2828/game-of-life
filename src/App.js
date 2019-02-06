@@ -19,7 +19,7 @@ class App extends Component {
 
   handleUpdateGrid() {
     console.log("here on click");
-    let gridUpdate = api.findAliveNeighbours(this.state.grid);
+    let gridUpdate = api.createNextGrid(this.state.grid);
     this.setState(
       { grid: gridUpdate }
     );
