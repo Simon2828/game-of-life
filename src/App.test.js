@@ -3,6 +3,9 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import api from "./api";
 
+// tests for seed grid?
+//
+
 it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(<App />, div);
@@ -15,7 +18,8 @@ test("scenario 0: no interactions - all dead", () => {
     [false, false, false],
     [false, false, false]
   ];
-  expect(api.createNextGrid(noInteractions)).toEqual([
+  let newGrid = api.createNextGrid(noInteractions);
+  expect(newGrid.updatedGrid).toEqual([
     [false, false, false],
     [false, false, false],
     [false, false, false]
@@ -73,3 +77,19 @@ test("scenario 4: creation of life: cell created when dead cell has 3 neighbours
     [false, false, false]
   ]);
 });
+
+test("find total alive cells", () => {
+  const mockGrid = [
+    [false, true, false],
+    [true, true, false],
+    [false, true, true]
+  ];
+  
+  expect(typeof api.getTotalAlive(mockGrid)).toBe("number");
+  expect(api.getTotalAlive(mockGrid)).toEqual(5);
+});
+
+
+test('find total cells alive', () => {
+  expect(api.getTotalAlive(['a','n'])).toEqual(5);
+})
