@@ -22,12 +22,10 @@ class App extends Component {
 
   componentDidMount() {
     this.setState(
-      { grid: api.createSeedGrid(this.state.size) }
-      // this.runIteration()
+      { grid: api.createSeedGrid(this.state.size) },
+      this.runIteration()
     );
   }
-
-  // make it every second could change interval - save in state
 
   runIteration() {
     window.setInterval(() => {
@@ -82,7 +80,7 @@ class App extends Component {
           <SizeOfGrid handleChange={this.handleChange} handleSubmit={this.handleSubmit} size={this.state.size}/>
           <Grid grid={this.state.grid} onClick={this.toggleCell} />
           <button onClick={this.handleUpdateGrid}>update grid</button>
-          <button onClick={this.handleRefresh}>refresh grid</button>
+          {/* <button onClick={this.handleRefresh}>refresh grid</button> */}
           <div>Number alive: {this.state.numberAlive}</div>
         </section>
       </div>

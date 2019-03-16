@@ -1,23 +1,4 @@
-// run automatically
 
-// count alive/generated cells
-
-// option to change size of grid
-
-// refactor form component
-
-// click on cell to make it alive / dead
-
-// save to database - maybe number of iterations??
-
-// extend tests
-
-// react hooks??
-
-// actually have a grid
-// background-image:
-// linear-gradient(#333 1px, transparent 1px),
-// linear-gradient(90deg, #333 1px, transparent 1px); ???
 
 class Api {
   createSeedGrid(sizeOfGrid) {
